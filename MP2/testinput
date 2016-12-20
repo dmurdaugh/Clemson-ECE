@@ -1,0 +1,361 @@
+#testinput by Denzel Murdaugh
+#known bugs: "print_route_rec_long" has a pretty funky output. Can't fix(not my code).
+
+# Test 1: Inserting into the sorted list
+INSERT
+7
+MAD
+7
+DAM
+1
+1
+6
+7
+INSERT
+8
+AL
+8
+qpa
+3
+4
+5
+2
+3
+6
+INSERT
+23
+AL
+23
+qpa
+3
+4
+5
+2
+3
+6
+INSERT
+2
+AL
+2
+qpa
+3
+4
+5
+2
+3
+6
+INSERT
+100
+AL
+100
+qpa
+3
+4
+5
+2
+3
+6
+PRINT
+
+# Test 2 Reverse the list
+REVERSE
+PRINT
+
+# Test 3: Find and Remove a node
+FIND 8
+REMOVE 8
+
+#Test 3: Insert into middle of reversed list
+
+INSERT
+10
+AL
+10
+qpa
+3
+4
+5
+1
+3
+5
+PRINT
+
+#Test 4: Testing find function on head and tail
+FIND 2
+FIND 23
+FIND 50
+
+#Test 5: Testing Insert of duplicates
+INSERT
+2
+AL
+2
+qpa
+3
+4
+5
+2
+7
+7
+FIND 2
+PRINT
+
+#Test 6: Empty the list
+REMOVE 23
+REMOVE 10
+REMOVE 7
+REMOVE 2
+PRINT
+
+# Test 7: Input duplicates at each index
+INSERT
+2
+AL
+2
+qpa
+3
+4
+5
+2
+7
+7
+INSERT
+2
+AL
+2
+qpa
+3
+4
+5
+2
+8
+8
+FIND 2
+INSERT
+4
+AL
+4
+qpa
+3
+4
+5
+2
+7
+7
+INSERT
+4
+AL
+4
+qpa
+3
+4
+5
+2
+8
+8
+FIND 4
+INSERT
+90
+AL
+90
+qpa
+3
+4
+5
+2
+7
+7
+INSERT
+90
+AL
+90
+qpa
+3
+4
+5
+2
+8
+8
+FIND 90
+INSERT
+1
+AL
+1
+qpa
+3
+4
+5
+2
+7
+7
+INSERT
+1
+AL
+1
+qpa
+3
+4
+5
+2
+8
+8
+FIND 1
+PRINT
+
+#Test 8 searching for multiple src_ip_address
+REMOVE 4
+REMOVE 2
+REMOVE 1
+REMOVE 90
+INSERT
+1
+AL
+2
+qpa
+3
+4
+5
+2
+8
+8
+INSERT
+1
+AL
+3
+qpa
+3
+4
+5
+2
+8
+8
+INSERT
+1
+AL
+4
+qpa
+3
+4
+5
+2
+8
+8
+INSERT
+1
+AL
+5
+qpa
+3
+4
+5
+2
+8
+8
+PRINT
+FIND 1
+
+#TEST 9: Find using dest_ip_addr
+FIND 1 4
+
+#Test 10: Remove using dest_ip_addr
+REMOVE 1 5
+
+
+#Test 11: Remove multiple nodes at once
+REMOVE 1
+PRINT
+
+#
+#
+# Begin Testing Unsorted List
+#
+#
+# TEST 1: Insert into unsorted list.
+ADDTAIL
+73
+rand51
+60
+rand13
+2
+4
+2
+16
+17
+ADDTAIL
+77
+rand175
+16
+rand67
+3
+3
+0
+5
+17
+17
+ADDTAIL
+41
+rand248
+9
+rand128
+5
+2
+5
+4
+2
+5
+10
+3
+ADDTAIL
+24
+rand241
+43
+rand189
+4
+2
+0
+4
+5
+7
+11
+ADDTAIL
+71
+rand34
+85
+rand42
+4
+2
+5
+2
+0
+12
+19
+PRINTQ
+# Test 2: Remove From the list
+
+PRINTHEAD
+RMHEAD
+PRINTHEAD
+RMHEAD
+PRINTHEAD
+RMHEAD
+PRINTHEAD
+RMHEAD
+PRINTHEAD
+RMHEAD
+PRINTHEAD
+RMHEAD
+ADDTAIL
+24
+rand241
+43
+rand189
+4
+2
+0
+4
+5
+7
+11
+PRINTHEAD
+RMHEAD
+QUIT

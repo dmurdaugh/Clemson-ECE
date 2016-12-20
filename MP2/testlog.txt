@@ -1,0 +1,286 @@
+Lab2 list size is 4. Possible commands:
+Sorted list: INSERT; FIND s or FIND s d; REMOVE s or REMOVE s d; PRINT; REVERSE
+Queue      : ADDTAIL; RMHEAD; PRINTHEAD; PRINTQ
+           : STATS; QUIT
+# #testinput by Denzel Murdaugh
+# #known bugs: "print_route_rec_long" has a pretty funky output. Can't fix(not my code).
+# 
+# # Test 1: Inserting into the sorted list
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 1 IP addresses:
+IP 0:Round trip delay:Time received:
+Inserted: 7
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 8
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 23
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 2
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Rejected: 100
+List has 4 records
+   0: src IP: 2, dest: 2
+   1: src IP: 7, dest: 7
+   2: src IP: 8, dest: 8
+   3: src IP: 23, dest: 23
+# 
+# # Test 2 Reverse the list
+List reversed, new order: Descending
+List has 4 records
+   0: src IP: 23, dest: 23
+   1: src IP: 8, dest: 8
+   2: src IP: 7, dest: 7
+   3: src IP: 2, dest: 2
+# 
+# # Test 3: Find and Remove a node
+Found: 8 at index 1
+    src: 8 (AL), dest: 8 (qpa), delay: 3, time: 6
+    3 hops: (4,5,2)
+Removed: 8
+    src: 8 (AL), dest: 8 (qpa), delay: 3, time: 6
+    3 hops: (4,5,2)
+# 
+# #Test 3: Insert into middle of reversed list
+# 
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 10
+List has 4 records
+   0: src IP: 23, dest: 23
+   1: src IP: 10, dest: 10
+   2: src IP: 7, dest: 7
+   3: src IP: 2, dest: 2
+# 
+# #Test 4: Testing find function on head and tail
+Found: 2 at index 3
+    src: 2 (AL), dest: 2 (qpa), delay: 3, time: 6
+    3 hops: (4,5,2)
+Found: 23 at index 0
+    src: 23 (AL), dest: 23 (qpa), delay: 3, time: 6
+    3 hops: (4,5,2)
+Did not find: 50
+# 
+# #Test 5: Testing Insert of duplicates
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Updated: 2
+Found: 2 at index 3
+    src: 2 (AL), dest: 2 (qpa), delay: 7, time: 7
+    3 hops: (4,5,2)
+List has 4 records
+   0: src IP: 23, dest: 23
+   1: src IP: 10, dest: 10
+   2: src IP: 7, dest: 7
+   3: src IP: 2, dest: 2
+# 
+# #Test 6: Empty the list
+Removed: 23
+    src: 23 (AL), dest: 23 (qpa), delay: 3, time: 6
+    3 hops: (4,5,2)
+Removed: 10
+    src: 10 (AL), dest: 10 (qpa), delay: 3, time: 5
+    3 hops: (4,5,1)
+Removed: 7
+    src: 7 (MAD), dest: 7 (DAM), delay: 6, time: 7
+    1 hops: (1)
+Removed: 2
+    src: 2 (AL), dest: 2 (qpa), delay: 7, time: 7
+    3 hops: (4,5,2)
+List empty
+# 
+# # Test 7: Input duplicates at each index
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 2
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 2
+Found: 2 at index 0
+    src: 2 (AL), dest: 2 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 4
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 4
+Found: 4 at index 0
+    src: 4 (AL), dest: 4 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 90
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 90
+Found: 90 at index 0
+    src: 90 (AL), dest: 90 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 1
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Updated: 1
+Found: 1 at index 3
+    src: 1 (AL), dest: 1 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+List has 4 records
+   0: src IP: 90, dest: 90
+   1: src IP: 4, dest: 4
+   2: src IP: 2, dest: 2
+   3: src IP: 1, dest: 1
+# 
+# #Test 8 searching for multiple src_ip_address
+Removed: 4
+    src: 4 (AL), dest: 4 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+Removed: 2
+    src: 2 (AL), dest: 2 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+Removed: 1
+    src: 1 (AL), dest: 1 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+Removed: 90
+    src: 90 (AL), dest: 90 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 1
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 1
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 1
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 1
+List has 4 records
+   0: src IP: 1, dest: 5
+   1: src IP: 1, dest: 4
+   2: src IP: 1, dest: 3
+   3: src IP: 1, dest: 2
+Found: 1 at index 0
+    src: 1 (AL), dest: 5 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+Found: 1 at index 1
+    src: 1 (AL), dest: 4 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+Found: 1 at index 2
+    src: 1 (AL), dest: 3 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+Found: 1 at index 3
+    src: 1 (AL), dest: 2 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+# 
+# #TEST 9: Find using dest_ip_addr
+Found: 1 4 at index 1
+    src: 1 (AL), dest: 4 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+# 
+# #Test 10: Remove using dest_ip_addr
+Removed: 1 5
+    src: 1 (AL), dest: 5 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+# 
+# 
+# #Test 11: Remove multiple nodes at once
+Removed: 1
+    src: 1 (AL), dest: 4 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+Removed: 1
+    src: 1 (AL), dest: 3 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+Removed: 1
+    src: 1 (AL), dest: 2 (qpa), delay: 8, time: 8
+    3 hops: (4,5,2)
+List empty
+# 
+# #
+# #
+# # Begin Testing Unsorted List
+# #
+# #
+# # TEST 1: Insert into unsorted list.
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 2 IP addresses:
+IP 0:IP 1:Round trip delay:Time received:
+Appended 73 60 onto queue
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Appended 77 16 onto queue
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 5 IP addresses:
+IP 0:IP 1:IP 2:IP 3:IP 4:Round trip delay:Time received:
+Appended 41 9 onto queue
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 4 IP addresses:
+IP 0:IP 1:IP 2:IP 3:Round trip delay:Time received:
+Appended 24 43 onto queue
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 4 IP addresses:
+IP 0:IP 1:IP 2:IP 3:Round trip delay:Time received:
+Appended 71 85 onto queue
+Queue has 5 records
+   0: src IP: 73, dest: 60
+   1: src IP: 77, dest: 16
+   2: src IP: 41, dest: 9
+   3: src IP: 24, dest: 43
+   4: src IP: 71, dest: 85
+# # Test 2: Remove From the list
+# 
+Found at head of queue:
+    src: 73 (rand51), dest: 60 (rand13), delay: 16, time: 17
+    2 hops: (4,2)
+Deleted head with IP addrs: 0 0
+Found at head of queue:
+    src: 77 (rand175), dest: 16 (rand67), delay: 17, time: 17
+    3 hops: (3,0,5)
+Deleted head with IP addrs: 18018752 0
+Found at head of queue:
+    src: 41 (rand248), dest: 9 (rand128), delay: 10, time: 3
+    5 hops: (2,5,4,2,5)
+Deleted head with IP addrs: 18018928 0
+Found at head of queue:
+    src: 24 (rand241), dest: 43 (rand189), delay: 7, time: 11
+    4 hops: (2,0,4,5)
+Deleted head with IP addrs: 18018400 0
+Found at head of queue:
+    src: 71 (rand34), dest: 85 (rand42), delay: 12, time: 19
+    4 hops: (2,5,2,0)
+Deleted head with IP addrs: 18018576 0
+Queue is empty
+Queue empty, did not remove
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 4 IP addresses:
+IP 0:IP 1:IP 2:IP 3:Round trip delay:Time received:
+Appended 24 43 onto queue
+Found at head of queue:
+    src: 24 (rand241), dest: 43 (rand189), delay: 7, time: 11
+    4 hops: (2,0,4,5)
+Deleted head with IP addrs: 18018576 0
+Goodbye
