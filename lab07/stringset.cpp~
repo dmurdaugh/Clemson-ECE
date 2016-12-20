@@ -1,0 +1,69 @@
+#include <iostream>
+using std::cout;
+using std::endl;
+
+#include "stringset.h"
+
+/* Return a hash for the string s in the range 0..table_size-1 */
+int StringSet::hash(string s) {
+  unsigned int i, h = 0;
+  for (i = 0; i < s.length(); ++i)
+    h = (h * 2917 + (unsigned int)s[i]) % table_size;
+  return h;
+}
+
+void StringSet::insert(string key, int val) {
+
+Node *x= find(key);
+
+if(x==NULL){
+int h=hash(key);
+Node *current= hash_table[h];
+hash_table[h]= new Node (key,val);
+hash_table[h]->next=current;
+
+}
+else
+x->setVal(val);
+}
+
+Node* StringSet::find(string key) {
+int h=hash(key);
+Node *current=hash_table[h];
+
+while(current != NULL){
+	if(current -> key == key){
+		return current;
+	}
+current =current -> next;
+}
+return NULL;
+
+}
+
+void StringSet::print() {
+for( int i=0;i<table_size;i++){
+	Node *current= hash_table[i];
+	while (current != NULL){
+		cout << i << "	";
+		cout << "(" <<current->key << "," << current->val << ") ";
+		current=current->next;
+		}
+	cout << endl;
+}	
+
+}
+
+Node* StringSet::mostFrequent() {
+	Node* mostf= new Node ("0",0);
+	for(int i=0;i<table_size;i++){
+		Node* current=hash_table[i];
+		while( current != NULL){
+			if(current->val > mostf->val){
+				mostf=current;
+			}
+			current= current->next;
+		}
+	}
+return mostf;
+}
