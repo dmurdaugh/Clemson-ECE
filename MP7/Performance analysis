@@ -1,0 +1,44 @@
+Performance Analysis
+Denzel Murdaugh
+
+Large hash table
+Read 100055 words from 10 documents in 120 msecs
+# #TESTSCRIPT
+# 
+Found 1318 unique words in doc 9
+   A unique word is anodically
+Found 8715 words in doc 9
+   watery used most times 5
+   echinoids used fewest times 1
+Table size (87719), load factor (0.425677)
+Processed commands in 10 msecs
+
+Medium hash Table
+Read 500495 words from 50 documents in 180 msecs
+# #TESTSCRIPT
+# 
+Found 14 unique words in doc 49
+   A unique word is synchromeshes
+Found 3772 words in doc 49
+   valorizations used most times 13
+   surmisers used fewest times 1
+Table size (10949), load factor (0.624167)
+Processed commands in 10 msecs
+
+
+Small Hash Table
+Read 300055 words from 10 documents in 140 msecs
+# #TESTSCRIPT
+# 
+Found 8 unique words in doc 4
+   A unique word is toruli
+Found 684 words in doc 4
+   rosarians used most times 227
+   heliotropism used fewest times 1
+Table size (43853), load factor (0.647527)
+Processed commands in 0 msecs
+
+
+ANALYSIS
+The hash function used allows for each word to have a very unique key. This 
+makes looking them up very easy as well as finding a place to put them since there shouldn't be many collisions. Also due to the way the hash table is implemented in design all information needed is readily available and not costly to access. This allows the commands to be processed efficiently. 

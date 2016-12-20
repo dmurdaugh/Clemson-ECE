@@ -1,0 +1,23 @@
+These are to test that the tree constructs properly
+lab5 -o -w 4 -t 0
+lab5 -o -w 20 -t 0
+lab5 -r -w 4 -t 0
+lab5 -r -w 20 -t 0
+lab5 -p -w 4 -t 0
+lab5 -p -w 20 -t 0
+lab5 -o -w 4 -t 0 -f avl
+lab5 -o -w 20 -t 0 -f avl
+lab5 -r -w 4 -t 0 -f avl
+lab5 -r -w 20 -t 0 -f avl
+lab5 -p -w 4 -t 0 -f avl
+lab5 -p -w 20 -t 0 -f avl
+These are to test the different times between optimal,random, and poor tree construction.
+
+lab5 -o -w 20 -t 1000000 -f bst
+lab5 -r -w 20 -t 1000000 -f bst	
+lab5 -p -w 20 -t 1000000 -f bst
+lab5 -o -w 20 -t 1000000 -f avl
+lab5 -r -w 20 -t 1000000 -f avl
+lab5 -p -w 20 -t 1000000 -f avl
+
+

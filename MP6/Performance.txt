@@ -1,0 +1,59 @@
+Performance Evaluation
+Denzel Murdaugh
+DenzelM
+
+Using the dictionary found at: 
+http://www.andrew.cmu.edu/course/15-121/dictionary.txt
+
+./lab6 -f dictionary.txt -g 2 -w 3 -m 10000 -s mandolin -w 3
+Ran shortest path algorithm in 1180 msecs
+  Longest shortest-path from mandolin to seducers cost 29997
+  
+./lab6 -f dictionary.txt -g 2 -w 3 -m 5000 -s mandolin -w 3
+ Ran shortest path algorithm in 260 msecs
+  Longest shortest-path from mandolin to hotfoots cost 14973
+ Runtime difference of: 4.5 times
+
+./lab6 -f dictionary.txt -g 2 -m 10000 -s mandolin -w 4
+Ran shortest path algorithm in 1160 msecs
+  Longest shortest-path from mandolin to proposal cost 1377612
+
+./lab6 -f dictionary.txt -g 2 -m 5000 -s mandolin -w 4
+Ran shortest path algorithm in 290 msecs
+  Longest shortest-path from mandolin to abducing cost 576812
+runtime difference of: 4.0
+
+Since the runtime is O(n^2) it is simple math that the difference between (M)^2 and (M/2)^2 is M^2 vs (M^2)/(2^2) = M^2/4
+
+./lab6 -f dictionary.txt -g 3 -m 700 -w 3
+Selecting words with length 6
+  Accepting at most 700 words for graph
+Weight function 3: hash weights for sparse graph
+Stored 700 words in 0 msecs
+Added 66139 edges in 10 msecs
+    13.5171 edge density percentage
+Avg num nbrs: 94.3257   min: 36, max: 124
+Start diameter algorithm
+Ran diameter algorithm in 3930 msecs
+Longest path is 3767 from (plaits) to (zanily) 
+
+./lab6 -f dictionary.txt -g 3 -m 350 -w 3
+Start diameter algorithm
+Ran diameter algorithm in 710 msecs
+Longest path is 1617 from (scarry) to (nature) 
+
+Runtime Difference: 5.53
+
+./lab6 -f dictionary.txt -g 3 -m 700 -w 4
+Start diameter algorithm
+Ran diameter algorithm in 3800 msecs
+Longest path is 40481 from (odists) to (roists)
+
+./lab6 -f dictionary.txt -g 3 -m 700 -w 4
+Start diameter algorithm
+Ran diameter algorithm in 420 msecs
+Longest path is 14319 from (talons) to (commit) 
+
+Runtime Difference:9.05
+
+When the graph is sparse the runtime seems to be closer to O(n^2logn) while the pattern for dense graphs moves closer to O(n^3). This can be seen by how different the runtime differences are in the two experiments also just how close the two come to operational averages.

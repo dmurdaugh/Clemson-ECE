@@ -1,0 +1,167 @@
+TestPlan
+Denzel Murdaugh
+DenzelM 
+MP6
+ECE223
+
+
+TEST 1: Test base case for five to zero
+Dictionary: Five Hero Zero Fire hire here
+./lab6 -f dictionary.txt -g 2 -s five -d zero -w 1
+RESULTS
+==============
+Weight function 1: word ladder
+Stored 9 words in 0 msecs
+Source: five at 0
+Dest: zero at 5
+Added 16 edges in 0 msecs
+    22.2222 edge density percentage
+Avg num nbrs: 0.888889   min: 0, max: 4
+    44.4444 percent of the nodes have no nbrs
+Start shortest path algorithm
+Ran shortest path algorithm in 0 msecs
+  Cost is 5 for path from five to zero
+List: five
+ -> fire
+ -> hire
+ -> here
+ -> hero
+ -> zero
+
+TEST 2: Testing neighbor function by adding neighbors to Five
+Dictionary: (added) live fivi fove 
+./lab6 -f dictionary.txt -g 1 -s five -d zero -w 1 -m 50
+RESULTS
+====================
+Dictionary file: dictionary.txt
+Selecting words with length 4
+  Accepting at most 50 words for graph
+Weight function 1: word ladder
+Stored 9 words in 0 msecs
+Source: five at 0
+Dest: zero at 5
+Added 16 edges in 0 msecs
+    22.2222 edge density percentage
+Avg num nbrs: 0.888889   min: 0, max: 4
+    44.4444 percent of the nodes have no nbrs
+word five has 4 neighbors
+five
+fire
+live
+fivi
+fove
+
+
+TEST 3: Testing Diameter Function should give same result as test 1
+./lab6 -f dictionary.txt -g 3 -s five -w 1 -m 50
+
+RESULT
+====================
+Dictionary file: dictionary.txt
+Selecting words with length 4
+  Accepting at most 50 words for graph
+Weight function 1: word ladder
+Stored 9 words in 0 msecs
+Source: five at 0
+Added 16 edges in 0 msecs
+    22.2222 edge density percentage
+Avg num nbrs: 0.888889   min: 0, max: 4
+    44.4444 percent of the nodes have no nbrs
+Start diameter algorithm
+Graph is not fully connected.
+Ran diameter algorithm in 0 msecs
+Longest path is 5 from (five) to (zero) 
+List: five
+fire
+hire
+here
+hero
+
+The remaining Tests change the dictionary to a version found at: 
+http://www.andrew.cmu.edu/course/15-121/dictionary.txt
+
+TEST 4: Testing neighbor function with full dictionary
+./lab6 -f dictionary.txt -g 1 -s five -w 1 -m 5000 -l 4
+RESULTS
+========================
+Dictionary file: dictionary.txt
+Selecting words with length 4
+  Accepting at most 5000 words for graph
+Weight function 1: word ladder
+Stored 4922 words in 30 msecs
+Source: five at 4503
+Added 61494 edges in 160 msecs
+    0.253885 edge density percentage
+Avg num nbrs: 6.24685   min: 0, max: 33
+    12.434 percent of the nodes have no nbrs
+word five has 2 neighbors
+dive
+live
+
+TEST 5: Testing for which word has the most neighbors
+./lab6 -f dictionary.txt -g 1 -w 1 -m 5000 -l 4
+words pins has 33 neighbors
+
+TEST 6: Shortest Distance Test Space to Atone
+Added 70220 edges in 700 msecs
+    0.062079 edge density percentage
+Avg num nbrs: 6.60211   min: 0, max: 38
+    5.50019 percent of the nodes have no nbrs
+Start shortest path algorithm
+Ran shortest path algorithm in 1040 msecs
+  Cost is 4 for path from space to atone
+List: space
+ -> spane
+ -> stane
+ -> stone
+ -> atone
+
+Test 6: Testing Longest-shortest path from Space
+Selecting words with length 5
+  Accepting at most 100000 words for graph
+Weight function 1: word ladder
+Stored 10636 words in 30 msecs
+Source: space at 2541
+Added 70220 edges in 590 msecs
+    0.062079 edge density percentage
+Avg num nbrs: 6.60211   min: 0, max: 38
+    5.50019 percent of the nodes have no nbrs
+Start shortest path algorithm
+Ran shortest path algorithm in 1000 msecs
+  Longest shortest-path from space to cdrom cost 18
+List: space
+ -> spats
+ -> seats
+ -> sexts
+ -> sexes
+ -> sexer
+ -> sewer
+ -> sewar
+ -> dewar
+ -> debar
+ -> kebar
+ -> kebab
+ -> kebob
+ -> kabob
+ -> cabob
+ -> carob
+ -> carom
+ -> cdrom
+
+Test 7: Diameter
+Selecting words with length 4
+  Accepting at most 900 words for graph
+Weight function 1: word ladder
+Stored 900 words in 0 msecs
+Added 2052 edges in 10 msecs
+    0.253615 edge density percentage
+Avg num nbrs: 2.28   min: 0, max: 11
+    18.5556 percent of the nodes have no nbrs
+Start diameter algorithm
+Graph is not fully connected.
+Ran diameter algorithm in 2020 msecs
+Longest path is 26 from (swot) to (lend) 
+List: swot
+...
+
+

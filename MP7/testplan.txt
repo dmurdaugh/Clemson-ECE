@@ -1,0 +1,115 @@
+Denzel Murdaugh
+TestPlan
+ECE223
+4/18/2016
+
+./genDocs 100 4 10 10
+
+TEST 1: Check to make sure words are read in correctly and numbered correctly
+./lab7 doc 1 linear
+Key      modulo     Word        index    document 
+-----------------------------------------
+-232430137   0      stubbily       0    doc0: 3 
+-341261594   7      safetied       7    doc0: 1 
+1238988385   12     serodiagnoses  12   doc0: 1 
+60768655     13     levitate       13   doc0: 1 
+-1409908835  14     dyskinesia     14   doc0: 1 
+-1346921507  15     heelers        15   doc0: 3 
+678234413    16     zero           16   doc0: 1 
+
+
+./lab7 doc 1 double
+
+Read 11 words from 1 documents in 0 msecs
+Key      modulo     Word        index    document 
+-----------------------------------------
+-232430137   0      stubbily       0    doc0: 3 
+-341261594   7      safetied       7    doc0: 1 
+1238988385   12     serodiagnoses  12   doc0: 1 
+60768655     13     levitate       13   doc0: 1 
+-1409908835  14     dyskinesia     14   doc0: 1 
+-1346921507  15     heelers        15   doc0: 3 
+678234413    16     zero           16   doc0: 1 
+
+TEST 2: Check for collision Resolution and inherently Rehashing
+LINEAR-----------------------------------------------------------
+Read 23 words from 2 documents in 0 msecs
+Key      modulo     Word        index    document 
+-----------------------------------------
+-456091009   1      sculk          1    doc0: 0 doc1: 1 
+-100568517   1      bipartite      2    doc0: 0 doc1: 1 
+1059827594   1      affeard        3    doc0: 0 doc1: 3 
+60768655     3      levitate       4    doc0: 1 doc1: 0 
+-1409908835  7      dyskinesia     7    doc0: 1 doc1: 0 
+-341261594   12     safetied       12   doc0: 1 doc1: 0 
+-458326043   13     putto          13   doc0: 0 doc1: 2 
+160415553    18     one            18   doc0: 0 doc1: 1 
+-284994815   21     giftwares      21   doc0: 0 doc1: 1 
+-232430137   22     stubbily       22   doc0: 3 doc1: 0 
+-2103528721  22     quamashes      23   doc0: 0 doc1: 1 
+1238988385   21     serodiagnoses  24   doc0: 1 doc1: 0 
+678234413    30     zero           30   doc0: 1 doc1: 1 
+-1346921507  36     heelers        36   doc0: 3 doc1: 1 
+DOUBLE---------------------------------------------------------DOUBLE
+Key      modulo     Word        index    document 
+-----------------------------------------
+1059827594   1      affeard        1    doc0: 0 doc1: 3 
+60768655     3      levitate       3    doc0: 1 doc1: 0 
+-1409908835  7      dyskinesia     7    doc0: 1 doc1: 0 
+-341261594   12     safetied       12   doc0: 1 doc1: 0 
+-458326043   13     putto          13   doc0: 0 doc1: 2 
+-2103528721  22     quamashes      16   doc0: 0 doc1: 1 
+1238988385   21     serodiagnoses  18   doc0: 1 doc1: 0 
+-284994815   21     giftwares      21   doc0: 0 doc1: 1 
+-232430137   22     stubbily       22   doc0: 3 doc1: 0 
+-456091009   1      sculk          26   doc0: 0 doc1: 1 
+678234413    30     zero           30   doc0: 1 doc1: 1 
+160415553    18     one            33   doc0: 0 doc1: 1 
+-100568517   1      bipartite      34   doc0: 0 doc1: 1 
+-1346921507  36     heelers        36   doc0: 3 doc1: 1 
+
+
+TEST 3:Check Functions(Continuing with tables above)
+MAX safetied  
+max found (safetied) 1 time in doc 0
+MAX quamashes
+max found (quamashes) 1 time in doc 1
+MAX heelers
+max found (heelers) 3 times in doc 0
+MIN zero                   
+min Found (zero) 1 time in doc 0
+MIN stubbily
+min Found (stubbily) 3 times in doc 0
+MIN heelers
+min Found (heelers) 1 time in doc 1
+DIST bipartite
+Used bipartite 1 time  in doc 1
+DIST serodiagnoses
+Used serodiagnoses 1 time  in doc 0
+DIST zero
+Used zero 1 time  in doc 0
+Used zero 1 time  in doc 1
+UNIQUE 1
+Found 7 unique words in doc 1
+   A unique word is putto
+COUNT 0
+Found 7 words in doc 0
+   heelers used most times 3
+   safetied used fewest times 1
+STATS
+Table size (37), load factor (0.378378)
+PRINT 1
+4: quamashes 1
+5: heelers 1
+11: one 1
+18: zero 1
+19: affeard 3
+23: sculk 1
+24: giftwares 1
+28: bipartite 1
+30: putto 2
+
+TEST 4:Test that the size of the table can hold up
+./genDocs 70000 10 10000 10000
+./lab7 doc 10 double
+./lab7 doc 10 single

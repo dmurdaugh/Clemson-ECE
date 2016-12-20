@@ -1,0 +1,135 @@
+Performance test 
+Denzel Murdaugh
+
+./lab5 -o -w 4 -t 10000
+  
+  Access trials: 10000
+  Levels for tree: 4
+  Build optimal tree with size=15
+  After access exercise, time=0, tree size=15
+    Expect successful search=5.53333, measured=3.28924, trials=4861
+    Expect unsuccessful search=8, measured=4, trials=5139
+
+
+./lab5 -r -w 4 -t 10000
+
+----- Access driver -----
+  Access trials: 10000
+  Levels for tree: 4
+  Build random tree with size=15
+  After access exercise, time=0, tree size=15
+    Expect successful search=6.2, measured=3.62513, trials=4791
+    Expect unsuccessful search=8.625, measured=4.31062, trials=5209
+----- End of access driver -----
+
+
+
+./lab5 -p -w 4 -t 10000
+----- Access driver -----
+  Access trials: 10000
+  Levels for tree: 4
+  Build poor tree with size=15
+  After access exercise, time=0, tree size=15
+    Expect successful search=6.06667, measured=3.57232, trials=4791
+    Expect unsuccessful search=8.5, measured=4.2511, trials=5209
+----- End of access driver -----
+
+
+./lab5 -p -w 20 -s 123 -t 10000
+Seed: 123
+
+----- Access driver -----
+  Access trials: 10000
+  Levels for tree: 20
+  Build poor tree with size=1048575
+  After access exercise, time=50, tree size=1048575
+    Expect successful search=1042, measured=514.784, trials=5035
+    Expect unsuccessful search=1045, measured=524.945, trials=4965
+----- End of access driver -----
+
+
+./lab5 -o -w 20 -s 123 -t 10000
+Seed: 123
+
+----- Access driver -----
+  Access trials: 10000
+  Levels for tree: 20
+  Build optimal tree with size=1048575
+  After access exercise, time=10, tree size=1048575
+    Expect successful search=37, measured=18.9646, trials=5031
+    Expect unsuccessful search=40, measured=20, trials=4969
+----- End of access driver -----
+
+./lab5 -r -w 20 -s 123 -t 10000
+Seed: 123
+
+----- Access driver -----
+  Access trials: 10000
+  Levels for tree: 20
+  Build random tree with size=1048575
+  After access exercise, time=10, tree size=1048575
+    Expect successful search=50.3439, measured=25.7933, trials=5002
+    Expect unsuccessful search=53.3439, measured=26.6158, trials=4998
+----- End of access driver -----
+
+./lab5 -o -w 20 -t 1000000 -f bst
+----- Access driver -----
+  Access trials: 1000000
+  Levels for tree: 20
+  Build optimal tree with size=1048575
+  After access exercise, time=700, tree size=1048575
+    Expect successful search=37, measured=19.0022, trials=499376
+    Expect unsuccessful search=40, measured=20, trials=500624
+----- End of access driver -----
+
+./lab5 -o -w 20 -t 1000000 -f avl
+----- Access driver -----
+  Access trials: 1000000
+  Levels for tree: 20
+  Build optimal tree with size=1048575
+  After access exercise, time=680, tree size=1048575
+    Expect unsuccessful search=40, measured=19.5017, trials=1000000
+----- End of access driver -----
+
+./lab5 -r -w 20 -t 1000000 -f bst
+----- Access driver -----
+  Access trials: 1000000
+  Levels for tree: 20
+  Build random tree with size=1048575
+  After access exercise, time=930, tree size=1048575
+    Expect successful search=52.3058, measured=26.6431, trials=500121
+    Expect unsuccessful search=55.3057, measured=27.6536, trials=499879
+----- End of access driver -----
+
+./lab5 -r -w 20 -t 1000000 -f avl
+----- Access driver -----
+  Access trials: 1000000
+  Levels for tree: 20
+  Build random tree with size=1048575
+  After access exercise, time=730, tree size=1048575
+    Expect unsuccessful search=40.7585, measured=19.8783, trials=1000000
+----- End of access driver -----
+
+
+./lab5 -p -w 20 -t 1000000 -f bst
+----- Access driver -----
+  Access trials: 1000000
+  Levels for tree: 20
+  Build poor tree with size=1048575
+  After access exercise, time=4870, tree size=1048575
+    Expect successful search=1042, measured=521.293, trials=499375
+    Expect unsuccessful search=1045, measured=522.345, trials=500625
+----- End of access driver -----
+
+./lab5 -p -w 20 -t 1000000 -f avl
+----- Access driver -----
+  Access trials: 1000000
+  Levels for tree: 20
+  Build poor tree with size=1048575
+  After access exercise, time=680, tree size=1048575
+    Expect unsuccessful search=40.9013, measured=19.9483, trials=1000000
+----- End of access driver -----
+
+
+Analysis Updated: As first expected the the AVL tree is much faster than the BST tree when the number are inserted randomly due to the unpredictable balance of the BST tree after so many calls.
+

@@ -1,0 +1,254 @@
+TEST 1: default settings no dropped packets
+Seed: 1767650979
+first-in-first-out queue policy
+Number of packets to simulate   10
+Number of input traffic streams 1
+Number of output transmitters   1
+Maximum queue length is         100
+Average packet size is (bytes)  1500 with standard deviation 500
+Avg inter-arrival time per src  13.3 microseconds
+The total generation rate is 75188 (packets/second)
+The transmission rate is     83333.3 (packets/second)
+The offered system load is   0.902256
+Arrival   : id 1 time   6.81582 pkt size 16951 Q size 0 idle: 1 
+  Start tx: id 1 time   6.81582 queue time 0
+    End tx: id 1 time   23.7668 tx time  16.951 system time  16.951
+Arrival   : id 2 time   25.4096 pkt size 16952 Q size 0 idle: 1 
+  Start tx: id 2 time   25.4096 queue time 0
+Arrival   : id 3 time   36.3708 pkt size 10444 Q size 0 idle: 0 
+    End tx: id 2 time   42.3616 tx time  16.952 system time  16.952
+  Start tx: id 3 time   42.3616 queue time 5.99073
+Arrival   : id 4 time   43.5173 pkt size  8117 Q size 0 idle: 0 
+    End tx: id 3 time   52.8056 tx time  10.444 system time 16.4347
+  Start tx: id 4 time   52.8056 queue time 9.28828
+    End tx: id 4 time   60.9226 tx time   8.117 system time 17.4053
+Arrival   : id 5 time   73.8235 pkt size  7747 Q size 0 idle: 1 
+  Start tx: id 5 time   73.8235 queue time 0
+    End tx: id 5 time   81.5705 tx time   7.747 system time   7.747
+Arrival   : id 6 time   100.848 pkt size  6607 Q size 0 idle: 1 
+  Start tx: id 6 time   100.848 queue time 0
+Arrival   : id 7 time   104.992 pkt size  3326 Q size 0 idle: 0 
+    End tx: id 6 time   107.455 tx time   6.607 system time   6.607
+  Start tx: id 7 time   107.455 queue time 2.46265
+    End tx: id 7 time   110.781 tx time   3.326 system time 5.78865
+Arrival   : id 8 time   151.028 pkt size 16712 Q size 0 idle: 1 
+  Start tx: id 8 time   151.028 queue time 0
+    End tx: id 8 time    167.74 tx time  16.712 system time  16.712
+Arrival   : id 9 time   169.736 pkt size 10639 Q size 0 idle: 1 
+  Start tx: id 9 time   169.736 queue time 0
+Arrival   : id 10 time   170.926 pkt size 12805 Q size 0 idle: 0 
+    End tx: id 9 time   180.375 tx time  10.639 system time  10.639
+  Start tx: id 10 time   180.375 queue time 9.44954
+    End tx: id 10 time    193.18 tx time  12.805 system time 22.2545
+
+----- Final Performance Measures -----
+Waiting time 2.71912
+Transmission 11.03
+System time  13.7491  percentage waiting 19.7767
+Dropped packets         0
+Average queue length    0.140756
+Transmitter Utilization 0.570969
+Expected waiting time 61.5385
+Expected system time  73.5385
+Expected queue size   4.62695
+
+Memory type   Current allocated  Avail on list  Max allocated
+-----------   -----------------  -------------  -------------
+ Packet                     0              2             2
+ Event                      0              3             3
+ Mem nodes                  5              0             5
+TEST 2: queue size 2 with dropped packets
+Seed: 1
+first-in-first-out queue policy
+Number of packets to simulate   15
+Number of input traffic streams 1
+Number of output transmitters   1
+Maximum queue length is         2
+Average packet size is (bytes)  1500 with standard deviation 40
+Avg inter-arrival time per src  3 microseconds
+The total generation rate is 333333 (packets/second)
+The transmission rate is     83333.3 (packets/second)
+The offered system load is   4
+Arrival   : id 1 time   9.53678 pkt size 11946 Q size 0 idle: 1 
+  Start tx: id 1 time   9.53678 queue time 0
+Arrival   : id 2 time   12.8088 pkt size 12396 Q size 0 idle: 0 
+Arrival   : id 3 time    14.519 pkt size 11590 Q size 1 idle: 0 
+Arrival   : id 4 time   16.1878 pkt size 11544 Q size 2 idle: 0 dropped
+    End tx: id 1 time   21.4828 tx time  11.946 system time  11.946
+  Start tx: id 2 time   21.4828 queue time 8.67394
+Arrival   : id 5 time   22.2501 pkt size 11638 Q size 1 idle: 0 
+Arrival   : id 6 time   26.8394 pkt size 12088 Q size 2 idle: 0 dropped
+Arrival   : id 7 time   27.4845 pkt size 11682 Q size 2 idle: 0 dropped
+Arrival   : id 8 time   32.1538 pkt size 12107 Q size 2 idle: 0 dropped
+    End tx: id 2 time   33.8788 tx time  12.396 system time 21.0699
+  Start tx: id 3 time   33.8788 queue time 19.3598
+    End tx: id 3 time   45.4688 tx time   11.59 system time 30.9498
+  Start tx: id 5 time   45.4688 queue time 23.2187
+Arrival   : id 9 time   47.2259 pkt size 12038 Q size 0 idle: 0 
+Arrival   : id 10 time   50.4594 pkt size 12227 Q size 1 idle: 0 
+Arrival   : id 11 time   50.8054 pkt size 12472 Q size 2 idle: 0 dropped
+Arrival   : id 12 time   51.1237 pkt size 11460 Q size 2 idle: 0 dropped
+Arrival   : id 13 time   52.2153 pkt size 12329 Q size 2 idle: 0 dropped
+Arrival   : id 14 time   53.5229 pkt size 11733 Q size 2 idle: 0 dropped
+Arrival   : id 15 time   56.0788 pkt size 12003 Q size 2 idle: 0 dropped
+    End tx: id 5 time   57.1068 tx time  11.638 system time 34.8567
+  Start tx: id 9 time   57.1068 queue time 9.8809
+    End tx: id 9 time   69.1448 tx time  12.038 system time 21.9189
+  Start tx: id 10 time   69.1448 queue time 18.6853
+    End tx: id 10 time   81.3718 tx time  12.227 system time 30.9123
+
+----- Final Performance Measures -----
+Waiting time 13.3031
+Transmission 11.9725
+System time  25.2756  percentage waiting 52.6322
+Dropped packets         9
+Average queue length    0.980913
+Transmitter Utilization 0.8828
+
+Memory type   Current allocated  Avail on list  Max allocated
+-----------   -----------------  -------------  -------------
+ Packet                     0              4             4
+ Event                      0              3             3
+ Mem nodes                  7              0             7
+TEST 3: five input streams and output transmitters
+Seed: 1767650979
+first-in-first-out queue policy
+Number of packets to simulate   20
+Number of input traffic streams 5
+Number of output transmitters   5
+Maximum queue length is         100
+Average packet size is (bytes)  1500 with standard deviation 500
+Avg inter-arrival time per src  5 microseconds
+The total generation rate is 1e+06 (packets/second)
+The transmission rate is     83333.3 (packets/second)
+The offered system load is   2.4
+Arrival   : id 1 time   2.04491 pkt size 10444 Q size 0 idle: 5 
+  Start tx: id 1 time   2.04491 queue time 0
+Arrival   : id 2 time   2.04525 pkt size  8117 Q size 0 idle: 4 
+  Start tx: id 2 time   2.04525 queue time 0
+Arrival   : id 3 time   2.56234 pkt size  7747 Q size 0 idle: 3 
+  Start tx: id 3 time   2.56234 queue time 0
+Arrival   : id 4 time   4.12078 pkt size  6607 Q size 0 idle: 2 
+  Start tx: id 4 time   4.12078 queue time 0
+Arrival   : id 5 time   4.73155 pkt size  3326 Q size 0 idle: 1 
+  Start tx: id 5 time   4.73155 queue time 0
+Arrival   : id 6 time    5.6788 pkt size 16712 Q size 0 idle: 0 
+Arrival   : id 7 time   6.99013 pkt size 10639 Q size 1 idle: 0 
+Arrival   : id 8 time   7.43729 pkt size 12805 Q size 2 idle: 0 
+    End tx: id 5 time   8.05755 tx time   3.326 system time   3.326
+  Start tx: id 6 time   8.05755 queue time 2.37875
+    End tx: id 2 time   10.1622 tx time   8.117 system time   8.117
+  Start tx: id 7 time   10.1622 queue time 3.17212
+    End tx: id 3 time   10.3093 tx time   7.747 system time   7.747
+  Start tx: id 8 time   10.3093 queue time 2.87205
+    End tx: id 4 time   10.7278 tx time   6.607 system time   6.607
+    End tx: id 1 time   12.4889 tx time  10.444 system time  10.444
+Arrival   : id 9 time    12.712 pkt size  6147 Q size 0 idle: 2 
+  Start tx: id 9 time    12.712 queue time 0
+Arrival   : id 10 time   12.7218 pkt size 11511 Q size 0 idle: 1 
+  Start tx: id 10 time   12.7218 queue time 0
+Arrival   : id 11 time   13.0716 pkt size 13064 Q size 0 idle: 0 
+Arrival   : id 12 time   13.4386 pkt size  8236 Q size 1 idle: 0 
+Arrival   : id 13 time   13.5007 pkt size 17334 Q size 2 idle: 0 
+Arrival   : id 14 time     15.63 pkt size 13940 Q size 3 idle: 0 
+Arrival   : id 15 time   15.8612 pkt size  7548 Q size 4 idle: 0 
+Arrival   : id 16 time   16.2162 pkt size  8175 Q size 5 idle: 0 
+Arrival   : id 17 time   17.2876 pkt size 14493 Q size 6 idle: 0 
+Arrival   : id 18 time   17.5171 pkt size  7999 Q size 7 idle: 0 
+Arrival   : id 19 time   18.3118 pkt size  4890 Q size 8 idle: 0 
+    End tx: id 9 time    18.859 tx time   6.147 system time   6.147
+  Start tx: id 11 time    18.859 queue time 5.78738
+    End tx: id 7 time   20.8012 tx time  10.639 system time 13.8111
+  Start tx: id 12 time   20.8012 queue time 7.36269
+Arrival   : id 20 time   22.0383 pkt size  9076 Q size 7 idle: 0 
+    End tx: id 8 time   23.1143 tx time  12.805 system time  15.677
+  Start tx: id 13 time   23.1143 queue time 9.61365
+    End tx: id 10 time   24.2328 tx time  11.511 system time  11.511
+  Start tx: id 14 time   24.2328 queue time 8.60283
+    End tx: id 6 time   24.7696 tx time  16.712 system time 19.0907
+  Start tx: id 15 time   24.7696 queue time 8.90836
+    End tx: id 12 time   29.0372 tx time   8.236 system time 15.5987
+  Start tx: id 16 time   29.0372 queue time 12.821
+    End tx: id 11 time    31.923 tx time  13.064 system time 18.8514
+  Start tx: id 17 time    31.923 queue time 14.6354
+    End tx: id 15 time   32.3176 tx time   7.548 system time 16.4564
+  Start tx: id 18 time   32.3176 queue time 14.8005
+    End tx: id 16 time   37.2122 tx time   8.175 system time  20.996
+  Start tx: id 19 time   37.2122 queue time 18.9005
+    End tx: id 14 time   38.1728 tx time   13.94 system time 22.5428
+  Start tx: id 20 time   38.1728 queue time 16.1345
+    End tx: id 18 time   40.3166 tx time   7.999 system time 22.7995
+    End tx: id 13 time   40.4483 tx time  17.334 system time 26.9477
+    End tx: id 19 time   42.1022 tx time    4.89 system time 23.7905
+    End tx: id 17 time    46.416 tx time  14.493 system time 29.1284
+    End tx: id 20 time   47.2488 tx time   9.076 system time 25.2105
+
+----- Final Performance Measures -----
+Waiting time 6.29949
+Transmission 9.9405
+System time  16.24  percentage waiting 38.79
+Dropped packets         0
+Average queue length    2.66651
+Transmitter Utilization 0.841544
+
+Memory type   Current allocated  Avail on list  Max allocated
+-----------   -----------------  -------------  -------------
+ Packet                     0             14            14
+ Event                      0             11            11
+ Mem nodes                 25              0            25
+TEST 4: matching queueing theory
+Seed: 1767650979
+first-in-first-out queue policy
+Number of packets to simulate   2000000
+Number of input traffic streams 1
+Number of output transmitters   1
+Maximum queue length is         100
+Average packet size is (bytes)  1500 with standard deviation 500
+Avg inter-arrival time per src  16 microseconds
+The total generation rate is 62500 (packets/second)
+The transmission rate is     83333.3 (packets/second)
+The offered system load is   0.75
+
+----- Final Performance Measures -----
+Waiting time 20.1552
+Transmission 12.016
+System time  32.1711  percentage waiting 62.6498
+Dropped packets         0
+Average queue length    1.26025
+Transmitter Utilization 0.751328
+Expected waiting time 20
+Expected system time  32
+Expected queue size   1.25
+
+Memory type   Current allocated  Avail on list  Max allocated
+-----------   -----------------  -------------  -------------
+ Packet                     0             24            24
+ Event                      0              3             3
+ Mem nodes                 27              0            27
+TEST 4: busy system
+Seed: 1767650979
+first-in-first-out queue policy
+Number of packets to simulate   1000000
+Number of input traffic streams 10
+Number of output transmitters   100
+Maximum queue length is         100
+Average packet size is (bytes)  1500 with standard deviation 500
+Avg inter-arrival time per src  1.26 microseconds
+The total generation rate is 7.93651e+06 (packets/second)
+The transmission rate is     83333.3 (packets/second)
+The offered system load is   0.952381
+
+----- Final Performance Measures -----
+Waiting time 0.843003
+Transmission 12.0146
+System time  12.8576  percentage waiting 6.55648
+Dropped packets         4
+Average queue length    6.69418
+Transmitter Utilization 0.95406
+
+Memory type   Current allocated  Avail on list  Max allocated
+-----------   -----------------  -------------  -------------
+ Packet                     0            201           201
+ Event                      0            111           111
+ Mem nodes                312              0           312
+end

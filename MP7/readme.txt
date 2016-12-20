@@ -1,0 +1,1 @@
+I have read the CPSC/ECE 3520 SS II 2016 course syllabus.
