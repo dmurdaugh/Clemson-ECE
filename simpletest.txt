@@ -1,0 +1,101 @@
+Prof. Harlan Russell
+ECE 223, MP1, Spring 2016
+simpletest.txt
+
+Test script to show a few simple tests for the sequential list ADT.
+
+ASSUMES: List size is four or larger
+
+TEST 1:  Add four entries to list.  
+
+INSERT 
+111
+home
+444
+work
+2
+222
+333
+1.1
+1
+INSERT 
+551 
+school
+557
+google
+5
+552
+553
+554
+555
+556
+5.7
+2
+INSERT 
+100 
+nasa
+102
+spacestation
+1
+101
+100.8
+3
+INSERT 
+100 
+nasa
+103
+spacestation
+1
+101
+100.9
+4
+
+TEST 2: Print the list and verify four entries are found
+
+PRINT
+
+TEST 3:  Replace the 111 entry in the list
+
+FIND 111 444
+INSERT 
+111
+home
+444
+work
+4
+222
+250
+333
+350
+1.2
+5
+FIND 111
+
+TEST 4: Print the list, verify entry 111 updated, and four entries are found
+
+PRINT
+
+TEST 5: Delete the 111 entry from the list and print new list
+
+REMOVE 111
+PRINT
+
+TEST 6: Look for the 111 entry 
+
+FIND 111 444
+FIND 111
+
+TEST 7: Look for the spacestation addresses
+
+FIND 100
+
+TEST 8: Reverse list
+
+STATS
+REVERSE
+PRINT
+
+TEST 9: quit. Check that there are no memory leaks
+
+QUIT
+

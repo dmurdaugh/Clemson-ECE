@@ -1,0 +1,644 @@
+Denzel Murdaugh (Based off of Prof Russel's test files)
+ECE 223, MP1, Spring 2016
+Input test file to verify that the program works correctly.  The file assumes
+that the sequential array holds a maximum of 10 elements.
+
+TEST 1: Fill list with 10 items and print.  All adds should be successful.  
+
+INSERT 
+222
+string222
+225
+string223
+2
+223
+224
+2.22
+0
+INSERT 
+333
+strg333
+337
+strg3
+3
+334
+335
+336
+1.333
+1
+INSERT 
+100
+node100
+105
+node105
+4
+101
+102
+103
+104
+2.100
+2
+INSERT 
+999
+host999
+993
+host993
+5
+998
+997
+996
+995
+994
+3.999
+3
+INSERT 
+777
+gw777
+784
+gw784
+6
+778
+779
+780
+781
+782
+783
+4.777
+4
+INSERT 
+666
+hub666
+674
+hub674
+7
+667
+668
+669
+670
+671
+672
+673
+5.666
+5
+INSERT 
+888
+switch8
+886
+switch6
+1
+887
+6.888
+6
+INSERT 
+555
+bridge555
+558
+bridge558
+2
+556
+557
+7.555
+7
+INSERT 
+444
+rtr444
+448
+rtr448
+3
+445
+446
+447
+8.444
+8
+INSERT 
+2
+dsl2
+12
+dsl12
+9
+3
+4
+5
+6
+7
+8
+9
+10
+11
+9.2
+9
+
+======== Print for TEST 1 ==========
+PRINT
+
+**** End of TEST 1 ****
+
+TEST 2: Attempt to add, delete, and look with a full list.  Should fail for all.
+
+INSERT 
+500
+begin500
+502
+end502
+1
+501
+2.4
+10
+INSERT 
+501
+start501
+512
+stop512
+10
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+11.501
+11
+PRINT
+REMOVE 1
+REMOVE 1000
+FIND 1
+FIND 1000
+
+**** End of TEST 2 ****
+
+TEST 3: Attempt to replace an element in full list.  Try three possibilities
+at front, middle, and end.  All three should succeed.
+
+INSERT 
+2
+dsl2
+12
+dsl22
+19
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+9.2
+12
+INSERT 
+888
+switch8
+886
+switch6
+2
+8872
+8873
+13.888
+13
+INSERT 
+999
+host999
+993
+host993
+3
+998
+996
+994
+14.999
+14
+
+
+======== Print for TEST 3 ==========
+
+PRINT
+
+**** End of TEST 3 ****
+
+TEST 4: Delete last element in full list.  Then look for element should fail.
+Add last element back, and verify look now succeeds.
+
+REMOVE 999
+FIND 999
+INSERT 
+999
+host9993
+9933
+host9933
+3
+9983
+9963
+9943
+15.999
+15
+FIND 999
+
+======== Print for TEST 4 ==========
+
+PRINT
+
+**** End of TEST 4 ****
+
+TEST 5: Delete items in middle of list, replace later items on list, then add
+items back.  Tests that replace works.  All should succeed.
+
+REMOVE 333
+REMOVE 555
+REMOVE 444
+INSERT 
+888
+switch84
+886
+switch64
+2
+88724
+88734
+16.8884
+16
+INSERT 
+666
+hub6664
+674
+hub6744
+8
+6674
+6684
+6694
+6704
+6714
+6724
+6734
+4444
+17.6664
+17
+INSERT 
+777
+gw7774
+784
+gw7844
+6
+7784
+7794
+7804
+7814
+7824
+7834
+18.7774
+18
+INSERT 
+333
+strg3334
+337
+strg34
+1
+3344
+19.3334
+19
+INSERT 
+444
+rtr4444
+4484
+rtr4484
+3
+4454
+4464
+4474
+20.4444
+20
+INSERT 
+555
+bridge5554
+5584
+bridge5584
+4
+5564
+5574
+5584
+5594
+21.5554
+21
+
+======== Print for TEST 5 ==========
+
+PRINT
+
+**** End of TEST 5 ****
+
+TEST 6: Delete first item in list, add item to middle, last should still be
+there.  All succeed.
+
+REMOVE 2
+INSERT 
+503
+last503
+505
+last505
+1
+504
+22.5
+22
+FIND 999
+
+**** End of TEST 6 ***
+
+TEST 7: Delete penultimate and look for last.  Should succeed.  Delete last item,
+then look for last.  Should not find last element
+
+REMOVE 888
+FIND 999
+REMOVE 999
+FIND 999
+
+**** End of TEST 7 ****
+
+TEST 8: Reverse list and insert in middle 
+
+STATS
+REVERSE
+PRINT
+INSERT 
+503
+last503
+605
+last605
+2
+504
+604
+23.5
+23
+PRINT
+
+**** End of TEST 8 ****
+
+TEST 9: Reverse again
+
+STATS
+REVERSE
+PRINT
+
+**** End of TEST 9 ****
+
+TEST 10: Find and remove both 503s
+
+FIND 503
+REMOVE 503
+FIND 503
+PRINT
+
+TEST 11: Remove Everything from the list check for no gaps.
+REMOVE 100
+PRINT
+REMOVE 222
+PRINT
+REMOVE 777
+PRINT
+REMOVE 444
+PRINT
+REMOVE 666
+PRINT
+REMOVE 555
+PRINT
+REMOVE 333
+PRINT
+
+TEST 12: Insert list of all same source IP checking to see if it still in order
+INSERT 
+222
+string222
+223
+string223
+2
+223
+224
+2.22
+0
+INSERT 
+222
+string222
+228
+string223
+2
+223
+224
+2.22
+0
+INSERT 
+222
+string222
+112
+string223
+2
+223
+224
+2.22
+0
+INSERT 
+222
+string222
+111
+string223
+2
+223
+224
+2.22
+0
+INSERT 
+222
+string222
+225
+string223
+2
+223
+224
+2.22
+0
+INSERT 
+222
+string222
+321
+string223
+2
+223
+224
+2.22
+0
+INSERT 
+222
+string222
+334
+string223
+2
+223
+224
+2.22
+0
+INSERT 
+222
+string222
+444
+string223
+2
+223
+224
+2.22
+0
+INSERT 
+222
+string222
+551
+string223
+2
+223
+224
+2.22
+0
+INSERT 
+222
+string222
+212
+string223
+2
+223
+224
+2.22
+0
+PRINT
+
+TEST 13: testing FIND for src and dest
+FIND 222 551
+
+TEST 14: Reverse the list
+STATS
+REVERSE
+PRINT
+
+TEST 15: Update every entry in the list
+INSERT 
+222
+string222
+223
+string223
+2
+223
+224
+1.22
+0
+INSERT 
+222
+string222
+228
+string223
+2
+223
+224
+3.22
+0
+INSERT 
+222
+string222
+112
+string223
+2
+223
+224
+4.22
+0
+INSERT 
+222
+string222
+111
+string223
+2
+223
+224
+5.22
+0
+INSERT 
+222
+string222
+225
+string223
+2
+223
+224
+6.22
+0
+INSERT 
+222
+string222
+321
+string223
+2
+223
+224
+7.22
+0
+INSERT 
+222
+string222
+334
+string223
+2
+223
+224
+8.22
+0
+INSERT 
+222
+string222
+444
+string223
+2
+223
+224
+9.22
+0
+INSERT 
+222
+string222
+551
+string223
+2
+223
+224
+10.22
+0
+INSERT 
+222
+string222
+212
+string223
+2
+223
+224
+2.33
+0
+STATS
+PRINT
+
+TEST 16: activate find which should find everything in the list
+FIND 222
+
+TEST 16: activate remove which should remove everything from the list
+REMOVE 222
+PRINT
+
+TEST 17: check for memory leaks
+QUIT
+
+
+

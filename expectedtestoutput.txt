@@ -1,0 +1,319 @@
+The list size is 10. Possible commands:
+INSERT
+FIND s or FIND s d
+REMOVE s or REMOVE s d
+PRINT
+STATS
+REVERSE
+QUIT
+# Prof. Harlan Russell
+# ECE 223, MP1, Spring 2016
+# Input test file to verify that the program works correctly.  The file assumes
+# that the sequential array holds a maximum of 10 elements.
+# 
+# TEST 1: Fill list with 10 items and print.  All adds should be successful.  
+# 
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 2 IP addresses:
+IP 0:IP 1:Round trip delay:Time received:
+Inserted: 222
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 333
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 4 IP addresses:
+IP 0:IP 1:IP 2:IP 3:Round trip delay:Time received:
+Inserted: 100
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 5 IP addresses:
+IP 0:IP 1:IP 2:IP 3:IP 4:Round trip delay:Time received:
+Inserted: 999
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 6 IP addresses:
+IP 0:IP 1:IP 2:IP 3:IP 4:IP 5:Round trip delay:Time received:
+Inserted: 777
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 7 IP addresses:
+IP 0:IP 1:IP 2:IP 3:IP 4:IP 5:IP 6:Round trip delay:Time received:
+Inserted: 666
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 1 IP addresses:
+IP 0:Round trip delay:Time received:
+Inserted: 888
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 2 IP addresses:
+IP 0:IP 1:Round trip delay:Time received:
+Inserted: 555
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 444
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 9 IP addresses:
+IP 0:IP 1:IP 2:IP 3:IP 4:IP 5:IP 6:IP 7:IP 8:Round trip delay:Time received:
+Inserted: 2
+# 
+# ======== Print for TEST 1 ==========
+List has 10 records
+   0: src IP: 2, dest: 12
+   1: src IP: 100, dest: 105
+   2: src IP: 222, dest: 225
+   3: src IP: 333, dest: 337
+   4: src IP: 444, dest: 448
+   5: src IP: 555, dest: 558
+   6: src IP: 666, dest: 674
+   7: src IP: 777, dest: 784
+   8: src IP: 888, dest: 886
+   9: src IP: 999, dest: 993
+# 
+# **** End of TEST 1 ****
+# 
+# TEST 2: Attempt to add, delete, and look with a full list.  Should fail for all.
+# 
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 1 IP addresses:
+IP 0:Round trip delay:Time received:
+Rejected: 500
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 10 IP addresses:
+IP 0:IP 1:IP 2:IP 3:IP 4:IP 5:IP 6:IP 7:IP 8:IP 9:Round trip delay:Time received:
+Rejected: 501
+List has 10 records
+   0: src IP: 2, dest: 12
+   1: src IP: 100, dest: 105
+   2: src IP: 222, dest: 225
+   3: src IP: 333, dest: 337
+   4: src IP: 444, dest: 448
+   5: src IP: 555, dest: 558
+   6: src IP: 666, dest: 674
+   7: src IP: 777, dest: 784
+   8: src IP: 888, dest: 886
+   9: src IP: 999, dest: 993
+Did not remove: 1
+Did not remove: 1000
+Did not find: 1
+Did not find: 1000
+# 
+# **** End of TEST 2 ****
+# 
+# TEST 3: Attempt to replace an element in full list.  Try three possibilities
+# at front, middle, and end.  All three should succeed.
+# 
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 19 IP addresses:
+IP 0:IP 1:IP 2:IP 3:IP 4:IP 5:IP 6:IP 7:IP 8:IP 9:IP 10:IP 11:IP 12:IP 13:IP 14:IP 15:IP 16:IP 17:IP 18:Round trip delay:Time received:
+Updated: 2
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 2 IP addresses:
+IP 0:IP 1:Round trip delay:Time received:
+Updated: 888
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Updated: 999
+# 
+# ======== Print for TEST 3 ==========
+# 
+List has 10 records
+   0: src IP: 2, dest: 12
+   1: src IP: 100, dest: 105
+   2: src IP: 222, dest: 225
+   3: src IP: 333, dest: 337
+   4: src IP: 444, dest: 448
+   5: src IP: 555, dest: 558
+   6: src IP: 666, dest: 674
+   7: src IP: 777, dest: 784
+   8: src IP: 888, dest: 886
+   9: src IP: 999, dest: 993
+# 
+# **** End of TEST 3 ****
+# 
+# TEST 4: Delete last element in full list.  Then look for element should fail.
+# Add last element back, and verify look now succeeds.
+# 
+Removed: 999
+    src: 999 (host999), dest: 993 (host993), delay: 14.999, time: 14
+    3 hops: (998,996,994)
+Did not find: 999
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 999
+Found: 999 at index 9
+    src: 999 (host9993), dest: 9933 (host9933), delay: 15.999, time: 15
+    3 hops: (9983,9963,9943)
+# 
+# ======== Print for TEST 4 ==========
+# 
+List has 10 records
+   0: src IP: 2, dest: 12
+   1: src IP: 100, dest: 105
+   2: src IP: 222, dest: 225
+   3: src IP: 333, dest: 337
+   4: src IP: 444, dest: 448
+   5: src IP: 555, dest: 558
+   6: src IP: 666, dest: 674
+   7: src IP: 777, dest: 784
+   8: src IP: 888, dest: 886
+   9: src IP: 999, dest: 9933
+# 
+# **** End of TEST 4 ****
+# 
+# TEST 5: Delete items in middle of list, replace later items on list, then add
+# items back.  Tests that replace works.  All should succeed.
+# 
+Removed: 333
+    src: 333 (strg333), dest: 337 (strg3), delay: 1.333, time: 1
+    3 hops: (334,335,336)
+Removed: 555
+    src: 555 (bridge555), dest: 558 (bridge558), delay: 7.555, time: 7
+    2 hops: (556,557)
+Removed: 444
+    src: 444 (rtr444), dest: 448 (rtr448), delay: 8.444, time: 8
+    3 hops: (445,446,447)
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 2 IP addresses:
+IP 0:IP 1:Round trip delay:Time received:
+Updated: 888
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 8 IP addresses:
+IP 0:IP 1:IP 2:IP 3:IP 4:IP 5:IP 6:IP 7:Round trip delay:Time received:
+Updated: 666
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 6 IP addresses:
+IP 0:IP 1:IP 2:IP 3:IP 4:IP 5:Round trip delay:Time received:
+Updated: 777
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 1 IP addresses:
+IP 0:Round trip delay:Time received:
+Inserted: 333
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 3 IP addresses:
+IP 0:IP 1:IP 2:Round trip delay:Time received:
+Inserted: 444
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 4 IP addresses:
+IP 0:IP 1:IP 2:IP 3:Round trip delay:Time received:
+Inserted: 555
+# 
+# ======== Print for TEST 5 ==========
+# 
+List has 10 records
+   0: src IP: 2, dest: 12
+   1: src IP: 100, dest: 105
+   2: src IP: 222, dest: 225
+   3: src IP: 333, dest: 337
+   4: src IP: 444, dest: 4484
+   5: src IP: 555, dest: 5584
+   6: src IP: 666, dest: 674
+   7: src IP: 777, dest: 784
+   8: src IP: 888, dest: 886
+   9: src IP: 999, dest: 9933
+# 
+# **** End of TEST 5 ****
+# 
+# TEST 6: Delete first item in list, add item to middle, last should still be
+# there.  All succeed.
+# 
+Removed: 2
+    src: 2 (dsl2), dest: 12 (dsl22), delay: 9.2, time: 12
+    19 hops: (3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21)
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 1 IP addresses:
+IP 0:Round trip delay:Time received:
+Inserted: 503
+Found: 999 at index 9
+    src: 999 (host9993), dest: 9933 (host9933), delay: 15.999, time: 15
+    3 hops: (9983,9963,9943)
+# 
+# **** End of TEST 6 ***
+# 
+# TEST 7: Delete penultimate and look for last.  Should succeed.  Delete last item,
+# then look for last.  Should not find last element
+# 
+Removed: 888
+    src: 888 (switch84), dest: 886 (switch64), delay: 16.8884, time: 16
+    2 hops: (88724,88734)
+Found: 999 at index 8
+    src: 999 (host9993), dest: 9933 (host9933), delay: 15.999, time: 15
+    3 hops: (9983,9963,9943)
+Removed: 999
+    src: 999 (host9993), dest: 9933 (host9933), delay: 15.999, time: 15
+    3 hops: (9983,9963,9943)
+Did not find: 999
+# 
+# **** End of TEST 7 ****
+# 
+# TEST 8: Reverse list and insert in middle 
+# 
+Number records: 8, Order: Ascending
+List reversed, new order: Descending
+List has 8 records
+   0: src IP: 777, dest: 784
+   1: src IP: 666, dest: 674
+   2: src IP: 555, dest: 5584
+   3: src IP: 503, dest: 505
+   4: src IP: 444, dest: 4484
+   5: src IP: 333, dest: 337
+   6: src IP: 222, dest: 225
+   7: src IP: 100, dest: 105
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 2 IP addresses:
+IP 0:IP 1:Round trip delay:Time received:
+Inserted: 503
+List has 9 records
+   0: src IP: 777, dest: 784
+   1: src IP: 666, dest: 674
+   2: src IP: 555, dest: 5584
+   3: src IP: 503, dest: 605
+   4: src IP: 503, dest: 505
+   5: src IP: 444, dest: 4484
+   6: src IP: 333, dest: 337
+   7: src IP: 222, dest: 225
+   8: src IP: 100, dest: 105
+# 
+# **** End of TEST 8 ****
+# 
+# TEST 9: Reverse again
+# 
+Number records: 9, Order: Descending
+List reversed, new order: Ascending
+List has 9 records
+   0: src IP: 100, dest: 105
+   1: src IP: 222, dest: 225
+   2: src IP: 333, dest: 337
+   3: src IP: 444, dest: 4484
+   4: src IP: 503, dest: 505
+   5: src IP: 503, dest: 605
+   6: src IP: 555, dest: 5584
+   7: src IP: 666, dest: 674
+   8: src IP: 777, dest: 784
+# 
+# **** End of TEST 9 ****
+# 
+# TEST 10: Find and remove both 503s
+# 
+Found: 503 at index 4
+    src: 503 (last503), dest: 505 (last505), delay: 22.5, time: 22
+    1 hops: (504)
+Found: 503 at index 5
+    src: 503 (last503), dest: 605 (last605), delay: 23.5, time: 23
+    2 hops: (504,604)
+Removed: 503
+    src: 503 (last503), dest: 505 (last505), delay: 22.5, time: 22
+    1 hops: (504)
+Removed: 503
+    src: 503 (last503), dest: 605 (last605), delay: 23.5, time: 23
+    2 hops: (504,604)
+Did not find: 503
+List has 7 records
+   0: src IP: 100, dest: 105
+   1: src IP: 222, dest: 225
+   2: src IP: 333, dest: 337
+   3: src IP: 444, dest: 4484
+   4: src IP: 555, dest: 5584
+   5: src IP: 666, dest: 674
+   6: src IP: 777, dest: 784
+# 
+Goodbye

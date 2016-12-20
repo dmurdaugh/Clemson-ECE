@@ -1,0 +1,100 @@
+The list size is 4. Possible commands:
+INSERT
+FIND s or FIND s d
+REMOVE s or REMOVE s d
+PRINT
+STATS
+REVERSE
+QUIT
+# Prof. Harlan Russell
+# ECE 223, MP1, Spring 2016
+# simpletest.txt
+# 
+# Test script to show a few simple tests for the sequential list ADT.
+# 
+# ASSUMES: List size is four or larger
+# 
+# TEST 1:  Add four entries to list.  
+# 
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 2 IP addresses:
+IP 0:IP 1:Round trip delay:Time received:
+Inserted: 111
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 5 IP addresses:
+IP 0:IP 1:IP 2:IP 3:IP 4:Round trip delay:Time received:
+Inserted: 551
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 1 IP addresses:
+IP 0:Round trip delay:Time received:
+Inserted: 100
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 1 IP addresses:
+IP 0:Round trip delay:Time received:
+Inserted: 100
+# 
+# TEST 2: Print the list and verify four entries are found
+# 
+List has 4 records
+   0: src IP: 100, dest: 102
+   1: src IP: 100, dest: 103
+   2: src IP: 111, dest: 444
+   3: src IP: 551, dest: 557
+# 
+# TEST 3:  Replace the 111 entry in the list
+# 
+Found: 111 444 at index 2
+    src: 111 (home), dest: 444 (work), delay: 1.1, time: 1
+    2 hops: (222,333)
+Source IP address:Source name:Destination IP address:Destination name:Number hops in route:
+Input list of 4 IP addresses:
+IP 0:IP 1:IP 2:IP 3:Round trip delay:Time received:
+Updated: 111
+Found: 111 at index 2
+    src: 111 (home), dest: 444 (work), delay: 1.2, time: 5
+    4 hops: (222,250,333,350)
+# 
+# TEST 4: Print the list, verify entry 111 updated, and four entries are found
+# 
+List has 4 records
+   0: src IP: 100, dest: 102
+   1: src IP: 100, dest: 103
+   2: src IP: 111, dest: 444
+   3: src IP: 551, dest: 557
+# 
+# TEST 5: Delete the 111 entry from the list and print new list
+# 
+Removed: 111
+    src: 111 (home), dest: 444 (work), delay: 1.2, time: 5
+    4 hops: (222,250,333,350)
+List has 3 records
+   0: src IP: 100, dest: 102
+   1: src IP: 100, dest: 103
+   2: src IP: 551, dest: 557
+# 
+# TEST 6: Look for the 111 entry 
+# 
+Did not find: 111 444
+Did not find: 111
+# 
+# TEST 7: Look for the spacestation addresses
+# 
+Found: 100 at index 0
+    src: 100 (nasa), dest: 102 (spacestation), delay: 100.8, time: 3
+    1 hops: (101)
+Found: 100 at index 1
+    src: 100 (nasa), dest: 103 (spacestation), delay: 100.9, time: 4
+    1 hops: (101)
+# 
+# TEST 8: Reverse list
+# 
+Number records: 3, Order: Ascending
+List reversed, new order: Descending
+List has 3 records
+   0: src IP: 551, dest: 557
+   1: src IP: 100, dest: 103
+   2: src IP: 100, dest: 102
+# 
+# TEST 9: quit. Check that there are no memory leaks
+# 
+Goodbye
